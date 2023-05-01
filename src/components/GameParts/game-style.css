@@ -1,0 +1,419 @@
+.loading-screen {
+  width: 100%;
+  height: 100vh;
+  background-color: #80ffd4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-screen h1{
+  position: relative;
+  color: black;
+  font-size: 3.6rem;
+}
+.loading-screen h1::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  content: attr(data-text);
+  color: #67d370;
+  animation: load 0.8s linear infinite;
+  overflow: hidden;
+}
+@keyframes load {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+.game-screen {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(340deg, #67d379 25%, #80ffd4 60%, #67d370) 30%;
+  overflow: hidden;
+}
+.game-screen .hangman {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  grid-template: repeat(10, 1fr) / repeat(8, 1fr);
+  display: grid;
+  margin-bottom: 20px;
+}
+.game-screen .hangman div {
+  position: absolute;
+}
+.game-screen .hangman .stick-bottom-left {
+  width: 100%;
+  grid-row: 11;
+  grid-column: 1/3;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-bottom-right {
+  width: 100%;
+  grid-row: 11;
+  grid-column: 7/9;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-central-left {
+  height: 100%;
+  grid-row: 2/11;
+  grid-column: 2;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-central-right {
+  height: 100%;
+  grid-row: 2/11;
+  grid-column: 8;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-top {
+  width: 100%;
+  grid-row: 2;
+  grid-column: 2/8;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-hang {
+  height: 100%;
+  grid-row: 2/3;
+  grid-column: 5;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-hold-left {
+  width: 100%;
+  transform: rotate(140deg);
+  grid-row: 3;
+  grid-column: 2/3;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .stick-hold-right {
+  width: 100%;
+  transform: rotate(40deg);
+  grid-row: 3;
+  grid-column: 7/8;
+  border: 7px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .hangman-head {
+  position: absolute;
+  left: 279px;
+  top: 71px;
+  width: 7%;
+  height: 14%;
+  border: 7px solid;
+  border-radius: 150px;
+}
+.game-screen .hangman .hangman-head .hangman-face {
+  background-color: rgb(218, 34, 34);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+}
+.game-screen .hangman .hangman-head .hangman-face .hangman-eyes {
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: bold;
+  left: 9px;
+  top: 5px;
+}
+.game-screen .hangman .hangman-head .hangman-face .hangman-mouth {
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: bold;
+  left: 9px;
+  top: 15px;
+}
+.game-screen .hangman .hangman-body {
+  height: 100%;
+  grid-row: 5/8;
+  grid-column: 5;
+  border: 5px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .hangman-right-arm {
+  width: 6%;
+  top: 130px;
+  left: 300px;
+  transform: rotate(30deg);
+  background-color: black;
+  border: 5px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .hangman-left-arm {
+  width: 6%;
+  top: 130px;
+  left: 265px;
+  transform: rotate(150deg);
+  background-color: black;
+  border: 5px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .hangman-right-leg {
+  width: 7%;
+  top: 230px;
+  left: 293px;
+  transform: rotate(50deg);
+  background-color: black;
+  border: 5px solid;
+  border-radius: 5px;
+}
+.game-screen .hangman .hangman-left-leg {
+  width: 7%;
+  top: 230px;
+  left: 265px;
+  transform: rotate(130deg);
+  background-color: black;
+  border: 5px solid;
+  border-radius: 5px;
+}
+.display-none{
+  display: none;
+}
+/* ----- word alphabet container ------ */
+.word-alphabet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* --------------------- palabra secreta  -------------------------*/
+.game-screen .secret-word {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.game-screen .secret-word div {
+  border-bottom: 5px solid;
+  width: 30px;
+  height: 41px;
+}
+.game-screen .secret-word span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/* -------------------- Alphabeto -------------------- */
+.game-screen .alphabet {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 65%;
+  margin-bottom: 10px;
+}
+.game-screen .alphabet button {
+  width: 50px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(182, 181, 181);
+  border-bottom: 8px solid rgb(146, 145, 145);
+  border-left: 5px solid rgb(182, 181, 181);
+  border-right: 5px solid rgb(182, 181, 181);
+}
+.game-screen .alphabet button:hover {
+  background-color: rgb(231, 231, 231);
+  border-top: 1px solid rgb(121, 121, 121);
+  border-bottom: 4px solid rgb(139, 139, 139);
+  border-left: 3px solid rgb(139, 139, 139);
+  border-right: 3px solid rgb(139, 139, 139);
+}
+.game-screen .alphabet #button {
+  background-color: rgb(177, 177, 177);
+  border-top: 1px solid rgb(121, 121, 121);
+  border-bottom: 4px solid rgb(139, 139, 139);
+  border-left: 3px solid rgb(139, 139, 139);
+  border-right: 3px solid rgb(139, 139, 139);
+}
+/* ------------------ RESULT ------------------------ */
+.result {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgb(81, 207, 207);
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 450px;
+  height: 210px;
+}
+.result h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 0;
+}
+.result hr {
+  width: 100%;
+  border-color: black;
+}
+.result .result-buttons {
+  display: flex;
+  gap: 35px;
+}
+.result .result-buttons button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: white;
+  transition: 0.45s;
+  overflow: hidden;
+  padding: 9px 20px;
+}
+.result .result-buttons button:hover {
+  background-color: #67d379;
+  box-shadow: 0 0 10px #67d379, 0 0 20px #67d379, 0 0 30px #000000,
+    0 0 10px #67d379;
+  transition: 0.45s;
+  border: 2px solid transparent;
+}
+
+@media (min-width: 1200px) {
+  .game-screen .alphabet {
+    width: 50%;
+  }
+}
+@media (max-width: 1000px) {
+  .game-screen .alphabet {
+    width: 90%;
+    margin: 0 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 750px) {
+  /* ----Alphabet---- */
+  .game-screen .alphabet {
+    width: 75%;
+    margin: 0 10px;
+    margin-bottom: 5px;
+  }
+  .game-screen .alphabet button {
+    width: 35px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+  /* -------- SECRET WORD ---------- */
+  .game-screen .secret-word {
+    margin-bottom: 25px;
+    width: 95vw;
+    gap: 7px;
+  }
+  /* --------------- HANGMAN ---------- */
+  .game-screen .hangman {
+    width: 270px;
+    height: 230px;
+  }
+  .game-screen .hangman .stick-bottom-right {
+    display: none;
+  }
+  .game-screen .hangman .stick-central-right {
+    display: none;
+  }
+  .game-screen .hangman .stick-top {
+    grid-column: 2/6;
+  }
+  .game-screen .hangman .stick-hold-left {
+    grid-column: 2/4;
+  }
+  .game-screen .hangman .stick-hold-right {
+    display: none;
+  }
+  .game-screen .hangman .stick-hang {
+    grid-column: 6;
+  }
+  .game-screen .hangman .hangman-head {
+    width: 12%;
+    left: 152px;
+    top: 57px;
+  }
+  .game-screen .hangman .hangman-head .hangman-face .hangman-eyes {
+    font-size: 0.75rem;
+    left: 6px;
+    top: 2px;
+  }
+  .game-screen .hangman .hangman-head .hangman-face .hangman-mouth {
+    font-size: 0.75rem;
+    left: 6px;
+    top: 10px;
+  }
+  .game-screen .hangman .hangman-body {
+    position: absolute;
+    top: 7px;
+    left: 35px;
+  }
+  .game-screen .hangman .hangman-right-arm {
+    width: 7%;
+    top: 105px;
+    left: 175px;
+  }
+  .game-screen .hangman .hangman-left-arm {
+    width: 7%;
+    top: 105px;
+    left: 145px;
+  }
+  .game-screen .hangman .hangman-right-leg {
+    width: 9%;
+    top: 180px;
+    left: 167px;
+  }
+  .game-screen .hangman .hangman-left-leg {
+    width: 9%;
+    top: 180px;
+    left: 148px;
+  }
+}
+@media (max-width: 450px) {
+  .loading-screen h1{
+    font-size: 2.3rem;
+  }
+  .result {
+    width: 290px;
+  }
+  .result h2 {
+    font-size: 1rem;
+  }
+  .result .result-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .result .result-buttons button {
+    font-size: 1.1rem;
+    padding: 6px 12px;
+  }
+}
+@media (max-height: 450px) {
+  .game-screen {
+    flex-direction: row;
+  }
+  .game-screen .secret-word{
+    margin-bottom: 60px;
+  }
+  .word-alphabet-container {
+    width: 50%;
+    align-items: flex-end;
+  }
+}

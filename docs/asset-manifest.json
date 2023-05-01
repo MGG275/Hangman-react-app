@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3187cfbb.css",
+    "main.js": "/static/js/main.b4574b77.js",
+    "static/media/hangman-images.jpeg": "/static/media/hangman-images.49e244f61ea0600d3b6b.jpeg",
+    "index.html": "/index.html",
+    "main.3187cfbb.css.map": "/static/css/main.3187cfbb.css.map",
+    "main.b4574b77.js.map": "/static/js/main.b4574b77.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3187cfbb.css",
+    "static/js/main.b4574b77.js"
+  ]
+}
