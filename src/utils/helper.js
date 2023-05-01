@@ -31,7 +31,6 @@ export const calulateResult = (
       </>
     );
   }
-
   if (errorCouter >= 6 && secretWordArrayHide.includes("") && !multiplayer) {
     return (
       <>
