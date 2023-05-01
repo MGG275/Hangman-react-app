@@ -1,10 +1,3 @@
-// export function createSecretWord() {
-//   const selectRandomWord = (array) =>
-//     array[Math.floor(Math.random() * array.length)];
-//     const secretWordsSiglePlayer = ["MOUNTAIN", "LIST", "SONG", "FAMILY", "EARTH", "HEAD", "STORY",	"EXAMPLE", "LIFE", "PAPER", "GROUP", "CHILDREN","SIDE", "WHERE", "MUCH", "BEFORE", "PLACE", "YEAR", "BACK", "THING", "NAME", "SENTENCE", "LETTER", "POINT", "MOTHER", "ANSWER", "AMERICA", "LAND", "HOME", "HAND", "PICTURE", "PAPER", "GROUP", "CHILDREN", "IMPORTANT", "WHITE", "SECOND", "ENOUGH", "MUST", "ASK",	"WENT",	"READ", "NEED", "MOVE",	"TRY", "CHANGE", "PLAY", "SPELL", "FOUND", "STUDY", "LEARN", "SHOULD"];
-//     let secretWord = selectRandomWord(secretWordsSiglePlayer);
-//     return secretWord;
-// }
 export const getSecretWord = async () => {
   const url = "https://random-word-api.herokuapp.com/word";
   const resp = await fetch(url);

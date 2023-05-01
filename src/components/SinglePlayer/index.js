@@ -68,8 +68,6 @@ function SinglePlayer() {
     );
   };
 
-
-
   return (
     <>
       {!secretWordArrayHide ? (

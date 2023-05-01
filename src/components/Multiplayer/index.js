@@ -73,7 +73,6 @@ function Multyplayer() {
       setSecretWordArrayHide(secretWord.toUpperCase().split("").fill(""));
     }
   };
-  console.log(secretWordArray); // eliminar antes de subir el programa
 
   return (
     <>
