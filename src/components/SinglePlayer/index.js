@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { calulateResult, getSecretWord, handleClickAlphabet } from "../../utils/helper";
+import {
+  calulateResult,
+  getSecretWord,
+  handleClickAlphabet,
+} from "../../utils/helper";
 import { HangmanWordAndAlphabet, Result } from "../GameParts/GameParts";
 import "../GameParts/game-style.css";
 
@@ -52,7 +56,7 @@ function SinglePlayer() {
       setSecretWordArrayHide(secretWord.toUpperCase().split("").fill(""));
     });
   }, []);
-  
+
   const handleAlphabet = (value, i) => {
     handleClickAlphabet(
       value,
@@ -66,6 +70,20 @@ function SinglePlayer() {
       errorCouter,
       result
     );
+  };
+
+  const handleReset = () => {
+    setSecretWordArrayHide("")
+    getSecretWord().then((secretWord) => {
+      setSecretWord(secretWord.toUpperCase());
+      setSecretWordArray(secretWord.toUpperCase().split(""));
+      setSecretWordArrayHide(secretWord.toUpperCase().split("").fill(""));
+    });
+    for (let i = 0; i < alphabet.length; i++) {
+      alphabet[i].selected = false;
+      setAlphabet(alphabet);
+    }
+    setErrorCouter(0);
   };
 
   return (
@@ -82,7 +100,13 @@ function SinglePlayer() {
             alphabet={alphabet}
             errorCouter={errorCouter}
           />
-          {result && <Result result={result} navigate={navigate} />}
+          {result && (
+            <Result
+              result={result}
+              navigate={navigate}
+              handleReset={handleReset}
+            />
+          )}
         </div>
       )}
     </>

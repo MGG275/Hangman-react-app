@@ -10,7 +10,7 @@ function PricipalScreen() {
   return (
     <div className="pricipal-screen">
       <div className="buttons">
-        <button onClick={ () => navigate('/singleplayer') }>Single Player</button>
+        <button onClick={ () => navigate('./singleplayer') }>Single Player</button>
         <button onClick={ () => navigate('./multiplayer') }>Multiplayer</button>
       </div>
       <div className="hangman-img">

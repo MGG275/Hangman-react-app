@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { bugInputDetector, calulateResult, handleClickAlphabet } from "../../utils/helper";
+import {
+  bugInputDetector,
+  calulateResult,
+  handleClickAlphabet,
+} from "../../utils/helper";
 import { HangmanWordAndAlphabet, Result, Formu } from "../GameParts/GameParts";
 import "../GameParts/game-style.css";
 import "./index.css";
@@ -74,6 +78,15 @@ function Multyplayer() {
     }
   };
 
+  const handleReset = () => {
+    setSecretWordArray("");
+    setErrorCouter(0);
+    for (let i = 0; i < alphabet.length; i++) {
+      alphabet[i].selected = false;
+      setAlphabet(alphabet);
+    }
+  };
+
   return (
     <>
       {!secretWordArray ? (
@@ -81,9 +94,7 @@ function Multyplayer() {
           handleImputChange={handleImputChange}
           handleSubmit={handleSubmit}
           errorDetector={errorInputDetector}
-          
         />
-        
       ) : (
         <div className="game-screen">
           <HangmanWordAndAlphabet
@@ -92,7 +103,13 @@ function Multyplayer() {
             alphabet={alphabet}
             errorCouter={errorCouter}
           />
-          {result && <Result result={result} navigate={navigate} />}
+          {result && (
+            <Result
+              result={result}
+              navigate={navigate}
+              handleReset={handleReset}
+            />
+          )}
         </div>
       )}
     </>

@@ -57,13 +57,13 @@ export const HangmanWordAndAlphabet = ({
   );
 };
 
-export const Result = ({ result, navigate }) => {
+export const Result = ({ result, navigate, handleReset}) => {
   return (
     <div className="result">
       <h2>{result}</h2>
       <hr></hr>
       <div className="result-buttons">
-        <button onClick={() => window.location.reload()}>Play Again</button>
+        <button onClick={() => {handleReset()}}>Play Again</button>
         <button onClick={() => navigate("/")}>Menu Principal</button>
       </div>
     </div>

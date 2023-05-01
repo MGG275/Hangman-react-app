@@ -59,6 +59,7 @@ form .submit{
 	transition: 0.8s;
 	overflow: hidden;
 	padding: 9px 20px;
+	color: black;
 }
 form .submit:hover {
   background-color: #000000;
