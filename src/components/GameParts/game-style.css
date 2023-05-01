@@ -231,6 +231,7 @@
   border-bottom: 8px solid rgb(146, 145, 145);
   border-left: 5px solid rgb(182, 181, 181);
   border-right: 5px solid rgb(182, 181, 181);
+  text-align: center;
 }
 .game-screen .alphabet button:hover {
   background-color: rgb(231, 231, 231);
@@ -282,6 +283,8 @@
   transition: 0.45s;
   overflow: hidden;
   padding: 9px 20px;
+  color: black;
+  border: 2px solid black;
 }
 .result .result-buttons button:hover {
   background-color: #67d379;

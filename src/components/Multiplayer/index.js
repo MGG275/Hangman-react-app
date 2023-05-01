@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { bugInputDetector, calulateResult, handleClickAlphabet } from "../../utils/helper";
+import {
+  bugInputDetector,
+  calulateResult,
+  handleClickAlphabet,
+} from "../../utils/helper";
 import { HangmanWordAndAlphabet, Result, Formu } from "../GameParts/GameParts";
 import "../GameParts/game-style.css";
 import "./index.css";
@@ -75,6 +79,7 @@ function Multyplayer() {
   };
 
   const handleReset = () => {
+    setSecretWord("");
     setSecretWordArray("");
     setErrorCouter(0);
     for (let i = 0; i < alphabet.length; i++) {
