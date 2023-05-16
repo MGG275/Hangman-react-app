@@ -64,7 +64,7 @@ export const Result = ({ result, navigate, handleReset}) => {
       <hr></hr>
       <div className="result-buttons">
         <button onClick={() => {handleReset()}}>Play Again</button>
-        <button onClick={() => navigate("/")}>Menu Principal</button>
+        <button onClick={() => navigate("/")}>Main Menu</button>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { calulateResult, getSecretWord, handleClickAlphabet } from "../../utils/helper";
+import {
+  calulateResult,
+  getSecretWord,
+  handleClickAlphabet,
+} from "../../utils/helper";
 import { HangmanWordAndAlphabet, Result } from "../GameParts/GameParts";
 import "../GameParts/game-style.css";
 
 function SinglePlayer() {
-  
   const navigate = useNavigate();
   const [alphabet, setAlphabet] = useState([
     { letter: "A", selected: false },
@@ -70,7 +73,7 @@ function SinglePlayer() {
   };
 
   const handleReset = () => {
-    setSecretWordArrayHide("")
+    setSecretWordArrayHide("");
     getSecretWord().then((secretWord) => {
       setSecretWord(secretWord.toUpperCase());
       setSecretWordArray(secretWord.toUpperCase().split(""));
